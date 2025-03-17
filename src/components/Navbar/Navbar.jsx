@@ -49,7 +49,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <div className={`nav-group ${isMobile ? 'desktop-only' : ''}`}>
+      <div className={`nav-group1 ${isMobile ? 'desktop-only' : ''}`}>
         <div className="nav-basic11">
           <Link to="/" className="nav-link active" onClick={closeMenu}>
             Home
