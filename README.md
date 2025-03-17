@@ -25,7 +25,7 @@ A high-performance Node.js library for efficient reading of large files and stre
 
 ```bash
 # Clone the repository
-git clone https://github.com/Pratham2403/Buffered-Reader.git
+git clone https://github.com/Singhadarsh2612/BufferedReader.git
 
 # Navigate to the project directory
 cd Buffered-Reader
