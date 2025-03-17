@@ -1,0 +1,172 @@
+{
+    "admin": [
+      {
+        "name": "Prof. Chiranjeev Kumar",
+        "linkedin": "https://www.linkedin.com/in/ck31101974/",
+        "photo": "/professor/ck_sir.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Prof. Soumen Bag",
+        "linkedin": "https://www.linkedin.com/in/soumen-bag-43ab8370/",
+        "photo": "/professor/sb_sir.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Prof. Pranav Bisht",
+        "linkedin": "https://www.linkedin.com/in/pranav-bisht-99157492/",
+        "photo": "/professor/pb_coFIC.jpg",
+        "email": "#"
+      }
+    ],
+    "writers": [
+      {
+        "name": "Sarthak Saumya",
+        "linkedin": "https://in.linkedin.com/in/sarthak-saumya-b6b581227",
+        "photo": "/student/sharthak.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Deepika Tanuvi",
+        "linkedin": "https://in.linkedin.com/in/deepika-tanuvi-86b61622b",
+        "photo": "/student/deepika.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Eshita Paliwal",
+        "linkedin": "https://in.linkedin.com/in/eshita-paliwal",
+        "photo": "/student/eshita.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Saksham Jha",
+        "linkedin": "https://in.linkedin.com/in/saksham-jha-iitism",
+        "photo": "/student/saksham.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Riya Kumari",
+        "linkedin": "https://in.linkedin.com/in/riya-kumari1",
+        "photo": "/student/Riya.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Bitra Sri Pragna",
+        "linkedin": "https://in.linkedin.com/in/sri-pragna-bitra-283b2b255",
+        "photo": "/student/pragna.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Kshitiz Pratap Singh",
+        "linkedin": "https://in.linkedin.com/in/kshitiz-pratap-singh-5b66bb24a",
+        "photo": "/student/Kshitiz.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Nanneboina Naga Chaitanya",
+        "linkedin": "https://in.linkedin.com/in/naga-chaitanya-nanneboina",
+        "photo": "/student/Naga Chaitanya.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Shyam Sunder",
+        "linkedin": "https://www.linkedin.com/in/shyam-s-948767255/",
+        "photo": "/student/shyam.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Sachin Rajguru",
+        "linkedin": "https://in.linkedin.com/in/sachin-rajguru-611249296",
+        "photo": "/student/shacin.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Rohan Garg",
+        "linkedin": "https://in.linkedin.com/in/rohan-garg-1446-",
+        "photo": "/student/Rohan.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Sumit Kumar",
+        "linkedin": "https://www.linkedin.com/in/sumit-kumar-b513102a4/",
+        "photo": "/student/sumit.jpg",
+        "email": "#"
+      }
+    ],
+    "designers": [
+      {
+        "name": "Abhishek Prasad Das",
+        "linkedin": "#",
+        "photo": "/student/AbhishekDas.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Ketham Reddy Supreeth",
+        "linkedin": "https://in.linkedin.com/in/supreeth-kethamreddy-189a50253",
+        "photo": "/student/Supreeth.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Daksh Mor",
+        "linkedin": "https://in.linkedin.com/in/daksh-mor",
+        "photo": "/student/Daksh.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Divyanshu Singh",
+        "linkedin": "https://www.linkedin.com/in/divyanshu-singh-9b73b2279/",
+        "photo": "/student/Divyanshu.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Kasam Pramodha",
+        "linkedin": "https://in.linkedin.com/in/pramodha-kasam-4979ab289",
+        "photo": "/student/Kasam.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Samarth Jindal",
+        "linkedin": "https://in.linkedin.com/in/samarth-jindal-1129a01b8",
+        "photo": "/student/Samarth.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Jatin Kumar",
+        "linkedin": "https://in.linkedin.com/in/jatin-kumar-053b1a298",
+        "photo": "/student/Jatin.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Monil Chandgdhiya",
+        "linkedin": "https://in.linkedin.com/in/monil-chandgadhiya-626600255",
+        "photo": "/student/Monil.jpg",
+        "email": "#"
+      },
+      {
+        "name": "Robin Kumar",
+        "linkedin": "https://in.linkedin.com/in/robin-kumar-0b522a300",
+        "photo": "/student/Robin.jpg",
+        "email": "#"
+      }
+    ],
+    "developers": [
+      {
+        "name": "Shreyansh Shandilya",
+        "linkedin": "https://in.linkedin.com/in/shreyansh-shandilya-5a8b1b246",
+        "photo": "/student/shreyansh.jpeg",
+        "email": "#"
+      },
+      {
+        "name": "Anirban Das",
+        "linkedin": "https://in.linkedin.com/in/anirban-das-2014412b9",
+        "photo": "/student/anirban.jpeg",
+        "email": "#"
+      },
+      {
+        "name": "Shashwat Nautiyal",
+        "linkedin": "https://in.linkedin.com/in/shashwat-nautiyal-347458280",
+        "photo": "/student/Shashwat.jpg",
+        "email": "#"
+      }
+    ]
+  }

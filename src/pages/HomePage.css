@@ -1,0 +1,417 @@
+/* HomePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* Navbar Styles */
+.Topnav {
+  width: 100%;
+  height: 118px;
+  position: relative;
+  background: #FFFEF3;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  width: 123px;
+  height: 59px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.nav-basic {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.nav-link {
+  color: black;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 39px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link.active {
+  position: relative;
+}
+
+
+
+.nav-special {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-link.highlight {
+  color: #666262;
+  font-size: 20px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0.8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.highlight.bytestreams {
+  background: #D5FDFF;
+}
+
+.nav-link.highlight.buffered-readers {
+  background: #FFFAC3;
+  
+}
+
+.nav-about {
+  margin-right: 50px;
+}
+
+/* Journal Header Styles */
+.journal-header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.journal-title-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.journal-logo {
+  margin-right: 2rem;
+}
+
+.journal-logo img {
+  width: 60px;
+}
+
+.journal-title {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.journal-title p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.journal-title h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #333;
+  font-family: 'Inria Sans', sans-serif;
+  letter-spacing: 2.4px;
+}
+
+/* Latest Section Styles */
+.latest-section {
+  display: flex;
+  background: linear-gradient(to bottom, #FFFBAB 0%, #F9B9E6 100%);
+  padding: 2rem 5%;
+}
+
+.latest-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2rem;
+}
+
+.latest-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.latest-left h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.latest-text h3 {
+  font-size: 2.25rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+.latest-text p {
+  font-size: 1.75rem;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+}
+
+.latest-right {
+  flex: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.monsoon-card {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 6px 8px 4px rgba(0, 0, 0, 0.25);
+  width: 70%;
+  max-width: 500px;
+}
+
+.monsoon-text {
+  margin-top: 2rem;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.monsoon-text h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  font-family: 'Italiana', serif;
+}
+
+.monsoon-text p {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Itim', cursive;
+}
+
+.read-btn11 {
+  background-color: #F3FB59;
+  color: black;
+  border: none;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 3rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.monsoon-image {
+  flex: 1;
+  max-width: 45%;
+}
+
+.monsoon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Purpose Section Styles */
+.purpose-section {
+  display: flex;
+  padding: 4.5rem 5%;
+  background-color: #FFFDEA;
+  border-radius: 12px;
+  margin: 2rem 5%;
+  box-shadow: 2px 6px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.purpose-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.purpose-left h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.purpose-right {
+  flex: 3;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.purpose-right h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.purpose-right p {
+  font-size: 1.25rem;
+  line-height: 2.4;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Events Section Styles */
+.events-section {
+  display: flex;
+  padding: 4.5rem 5%;
+  background-color: #FFFDEA;
+  border-radius: 12px;
+  margin: 2rem 5%;
+  box-shadow: 2px 6px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.events-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.events-left h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.events-right {
+  flex: 3;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.events-right h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.events-right p {
+  font-size: 1.25rem;
+  line-height: 2.4;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Topnav {
+    padding: 0 20px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-group {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .nav-basic, .nav-special {
+    margin-bottom: 10px;
+  }
+  
+  .nav-about {
+    margin-right: 0;
+  }
+  
+  .latest-section, .purpose-section, .events-section {
+    flex-direction: column;
+  }
+  
+  .latest-left, .purpose-left, .events-left {
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
+  }
+  
+  .purpose-right, .events-right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .monsoon-card {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .monsoon-image {
+    max-width: 100%;
+  }
+  
+  .journal-title-container {
+    flex-direction: column;
+  }
+  
+  .journal-logo {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title {
+    justify-content: flex-start;
+  }
+}

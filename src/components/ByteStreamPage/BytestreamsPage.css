@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.buffered-readers-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFEF3;
+}
+
+/* Navbar Styles - Same as HomePage */
+.Topnav {
+  width: 100%;
+  height: 118px;
+  position: relative;
+  background: #FFFEF3;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+.Topnav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 123px;
+  height: 59px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.nav-basic {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.nav-link {
+  color: black;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 39px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link.active {
+  position: relative;
+}
+
+
+
+.nav-special {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-link.highlight {
+  color: #666262;
+  font-size: 20px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0.8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.highlight.bytestreams {
+  background: #D5FDFF;
+}
+
+.nav-link.highlight.buffered-readers {
+  background: #FFFAC3;
+}
+
+.nav-about {
+  margin-right: 50px;
+}
+
+/* Archive Header Styles */
+.archive-header {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(90deg, #FFF8B5 0%, #FED1D8 100%);
+  text-align: center;
+  margin-top: 118px; /* Add this when navbar is sticky */
+  border-bottom: 1px solid #ccc;
+}
+
+/* Bytestreams Header Specific Style */
+.bytestreams-header {
+  background: linear-gradient(90deg, #C6FBFF 0%, #C0FFA3 100%);
+}
+
+.Topnav:not(.sticky) + .archive-header {
+  margin-top: 0;
+}
+
+.archive-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.archive-header h1 {
+  font-size: 40px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Bytestreams Header Text Specific Style */
+.bytestreams-header h1 {
+  font-size: 40px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 1.60px;
+  color: black;
+}
+
+.archive-header p {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* Filter Dropdown */
+.filter-dropdown-container {
+  position: relative;
+  margin-top: 20px;
+  z-index: 100;
+}
+.filter-dropdown-btn {
+    width: 163px;
+    height: 63px;
+    padding: 12px 16px;
+    background: #95E0E4;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    border: 1px solid white;
+    color: white;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0.96px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+.filter-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 163px;
+  background: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.filter-option {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Inria Sans', sans-serif;
+  font-weight: 400;
+  line-height: 39px;
+  cursor: pointer;
+}
+
+.filter-option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Magazines Section */
+.magazines-section {
+    padding: 40px 0;
+    background: linear-gradient(to bottom, #FBFFFF 0%, #FBFFFF 100%);
+
+    position: relative;
+  }
+
+  .year-section {
+    margin: 0 auto 40px;
+    max-width: 90%;
+    background-color: #F0FDFF; /* Light blue background for year sections */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+.year-title {
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+  padding: 0 10px;
+}
+
+.magazines-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 0 10px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+
+.magazines-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.magazines-row::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.magazines-row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.magazine-card {
+  min-width: 450px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.magazine-card.expanded {
+  min-width: 650px;
+}
+
+.magazine-content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 30px;
+}
+
+.magazine-text {
+  flex: 1;
+}
+
+.magazine-text h3 {
+  font-size: 32px;
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.magazine-text p {
+  font-size: 16px;
+  font-family: 'Itim', cursive;
+  margin-bottom: 5px;
+  color: black;
+}
+
+ .read-btn {
+    background-color: #95E0E4; /* Light blue for READ buttons */
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: 'Inter', sans-serif;
+  }
+
+.magazine-image-container {
+  width: 150px;
+  height: 200px;
+  overflow: visible;
+  margin-left: 20px;
+  position: relative;
+}
+
+.magazine-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.expand-btn {
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.magazine-description {
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Topnav {
+    padding: 0 20px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+    
+    .nav-group {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 10px;
+    }
+    
+    .nav-basic, .nav-special {
+    margin-bottom: 10px;
+    }
+    
+    .nav-about {
+    margin-right: 0;
+    }
+    
+    .archive-header {
+    padding: 20px 15px;
+    }
+    
+    .archive-header h1 {
+    font-size: 30px;
+    }
+    
+    .year-section {
+    max-width: 95%;
+    }
+    
+    .magazine-card {
+    min-width: 100%;
+    }
+    
+    .magazine-content {
+    flex-direction: column;
+    padding-right: 0;
+    }
+    
+    .magazine-image-container {
+    width: 100%;
+    height: 200px;
+    margin-left: 0;
+    margin-top: 20px;
+    }
+    
+    .expand-btn {
+    right: 10px;
+    top: auto;
+    bottom: 10px;
+    }
+    
+    .magazine-description {
+    padding-top: 10px;
+    }
+    }

@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Default font for the whole page */
+  color: black; /* Default text color */
+}
+
+/* Container */
+.buffered-readers-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFEF3; /* Light yellow background */
+}
+
+/* Navbar Styles */
+.Topnav {
+  width: 100%;
+  height: 118px;
+  position: relative;
+  background: #FFFEF3; /* Light yellow background */
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+.Topnav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #FFFEF3; /* Light yellow background */
+}
+
+.logo {
+  width: 123px;
+  height: 59px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.nav-basic {
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+.nav-link {
+  color: inherit; /* Inherit color from body */
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 39px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link.active {
+  position: relative;
+}
+
+
+
+.nav-special {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-link.highlight {
+  color: #666262;
+  font-size: 20px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0.8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.highlight.buffered-readers {
+  background: #FFFAC3; /* Light yellow highlight */
+  color: #000; /* Ensure text is black */
+}
+
+.nav-about {
+  margin-right: 50px;
+}
+
+/* Archive Header Styles */
+.archive-header {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(90deg, #FFF8B5 0%, #FED1D8 100%); /* Yellow-pink gradient */
+  text-align: center;
+  margin-top: 118px;
+  border-bottom: 1px solid #ccc;
+}
+
+.Topnav:not(.sticky) + .archive-header {
+  margin-top: 0;
+}
+
+.archive-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.archive-header h1 {
+  font-size: 40px;
+  font-family: 'Inria Serif', serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.archive-header p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Filter Dropdown */
+.filter-dropdown-container1 {
+  position: relative;
+  margin-top: 20px;
+  z-index: 100;
+}
+
+.filter-dropdown-btn1 {
+  width: 163px;
+  height: 63px;
+  padding: 12px 16px;
+  background: #FDC999; /* Light orange background */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: 1px solid white;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0.96px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.filter-dropdown-menu1 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 163px;
+  background: white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.filter-option1 {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Inria Sans', sans-serif;
+  font-weight: 400;
+  line-height: 39px;
+  cursor: pointer;
+}
+
+.filter-option1:hover {
+  background-color: #f5f5f5;
+}
+
+/* Magazines Section */
+.magazines-section1 {
+  padding: 40px 0;
+  background: linear-gradient(to bottom, #FFF4DE 0%, #FFECE6 100%);
+ /* Light yellow background */
+  position: relative;
+}
+
+.year-section1 {
+  margin: 0 auto 40px;
+  max-width: 90%;
+  background-color: #FDFDDA; /* Light yellow background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.year-title1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.magazines-row1 {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 0 10px 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+
+.magazines-row1::-webkit-scrollbar {
+  height: 8px;
+}
+
+.magazines-row1::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.magazines-row1::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.magazine-card1 {
+  min-width: 450px;
+  background-color: #FFF9F9; /* Lightest yellow for cards */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.magazine-card1.expanded {
+  min-width: 650px;
+}
+
+.magazine-content1 {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 30px;
+}
+
+.magazine-text1 {
+  flex: 1;
+}
+
+.magazine-text1 h3 {
+  font-size: 32px;
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.magazine-text1 p {
+  font-size: 16px;
+  font-family: 'Itim', cursive;
+  margin-bottom: 5px;
+}
+
+.read-btn1 {
+  background-color: #F3FB59; /* Bright yellow button */
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.magazine-image-container {
+  width: 150px;
+  height: 200px;
+  overflow: visible;
+  margin-left: 20px;
+  position: relative;
+}
+
+.magazine-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.pdf-thumbnail {
+  width: 150px; /* Matches the Page width */
+  height: calc(100% - 200px); /* Cuts 200px from the top */
+  overflow: hidden; /* Hides the clipped part */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdf-thumbnail canvas {
+  object-fit: contain; /* Ensures the image is fully visible */
+}
+
+
+.expand-btn {
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.magazine-description {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 1.5rem 0;
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Topnav {
+    padding: 0 20px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-group {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .nav-basic,
+  .nav-special {
+    margin-bottom: 10px;
+  }
+
+  .nav-about {
+    margin-right: 0;
+  }
+
+  .archive-header {
+    padding: 20px 15px;
+  }
+
+  .archive-header h1 {
+    font-size: 30px;
+  }
+
+  .year-section {
+    max-width: 95%;
+  }
+
+  .magazine-card {
+    min-width: 100%;
+  }
+
+  .magazine-content {
+    flex-direction: column;
+    padding-right: 0;
+  }
+
+  .magazine-image-container {
+    width: 100%;
+    height: 200px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .expand-btn {
+    right: 10px;
+    top: auto;
+    bottom: 10px;
+  }
+
+  .magazine-description {
+    padding-top: 10px;
+  }
+}
