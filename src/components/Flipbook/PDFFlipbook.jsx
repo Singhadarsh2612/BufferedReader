@@ -28,7 +28,7 @@ const PdfViewer = () => {
     const fetchPdf = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/download?fileId=${fileId}`,
+          `http://localhost:5003/download?fileId=${fileId}`,
           { responseType: "arraybuffer" }
         );
 
@@ -39,7 +39,9 @@ const PdfViewer = () => {
         setIsLoading(false);
       } catch (err) {
         console.error("Error fetching PDF:", err);
-        setError("Failed to fetch the PDF. Please check the file ID and try again.");
+        setError(
+          "Failed to fetch the PDF. Please check the file ID and try again."
+        );
         setIsLoading(false);
       }
     };
@@ -61,7 +63,7 @@ const PdfViewer = () => {
         <>
           {/* Back Button */}
           <button onClick={() => navigate(-1)} className="back-button">
-            ⬅ Go back 
+            ⬅ Go back
           </button>
 
           {/* PDF Document */}
@@ -84,7 +86,9 @@ const PdfViewer = () => {
               ⬅ Previous
             </button>
             <button
-              onClick={() => setPageNumber((prev) => Math.min(prev + 1, numPages))}
+              onClick={() =>
+                setPageNumber((prev) => Math.min(prev + 1, numPages))
+              }
               disabled={pageNumber === numPages}
             >
               Next ➡
@@ -104,7 +108,9 @@ const PdfViewer = () => {
                   pageNumber={pageNumber}
                   renderTextLayer={false}
                   renderAnnotationLayer={false}
-                  width={window.innerWidth > 800 ? 800 : window.innerWidth * 0.9}
+                  width={
+                    window.innerWidth > 800 ? 800 : window.innerWidth * 0.9
+                  }
                 />
               </Document>
             )
