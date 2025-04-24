@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar.jsx';
-import './HomePage.css';
-import logoImage2 from '/logo.png';
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import "./HomePage.css";
+import logoImage2 from "/logo.png";
 
 const BUFFERED_READERS_FOLDER_ID = "1inj0AM4qnEjLr88-7_SGGvQpuTv804rH";
 
@@ -15,7 +14,7 @@ const HomePage = () => {
   useEffect(() => {
     async function fetchLatestPdf() {
       try {
-        const url = `http://localhost:3001/pdfs?folderId=${BUFFERED_READERS_FOLDER_ID}`;
+        const url = `http://localhost:5003/pdfs?folderId=${BUFFERED_READERS_FOLDER_ID}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Failed to fetch PDFs`);
 
@@ -30,11 +29,11 @@ const HomePage = () => {
 
     fetchLatestPdf();
   }, []);
-  
+
   return (
     <div className="home-container">
       <Navbar />
-      
+
       {/* Journal Header */}
       <div className="journal-header">
         <div className="journal-title-container">
@@ -62,29 +61,33 @@ const HomePage = () => {
         <div className="latest-right">
           <div className="monsoon-card">
             <div className="monsoon-text">
-            <center><h3>{latestPdf ? latestPdf.name : " "}</h3></center>
-              <center><button
-                className="read-btn11"
-                onClick={() => {
-                  if (!latestPdf) return alert("No PDF available.");
-                  setIsLoadingMagazine(true);
-                  navigate("/pdf-viewer", {
-                    state: { pdfUrl: latestPdf.id }, // Pass only the file ID
-                  });
-                }}
-              >
-                {isLoadingMagazine ? "Loading..." : "READ"}
-              </button></center>
+              <center>
+                <h3>{latestPdf ? latestPdf.name : " "}</h3>
+              </center>
+              <center>
+                <button
+                  className="read-btn11"
+                  onClick={() => {
+                    if (!latestPdf) return alert("No PDF available.");
+                    setIsLoadingMagazine(true);
+                    navigate("/pdf-viewer", {
+                      state: { pdfUrl: latestPdf.id }, // Pass only the file ID
+                    });
+                  }}
+                >
+                  {isLoadingMagazine ? "Loading..." : "READ"}
+                </button>
+              </center>
             </div>
             <div className="monsoon-image">
-            {latestPdf ? (
-    <img
-      src={`http://localhost:3001/thumbnail?fileId=${latestPdf.id}&nocache=${Date.now()}`}
-      alt="Buffered Reader"
-    />
-  ) : (
-    null
-  )}
+              {latestPdf ? (
+                <img
+                  src={`http://localhost:5003/thumbnail?fileId=${
+                    latestPdf.id
+                  }&nocache=${Date.now()}`}
+                  alt="Buffered Reader"
+                />
+              ) : null}
             </div>
           </div>
         </div>
@@ -100,13 +103,18 @@ const HomePage = () => {
         <div className="purpose-right">
           <h3>What we Aim?</h3>
           <p>
-          The aim of the CSE Society is to create a dynamic and supportive environment that nurtures the technical and creative abilities of students in the field of computer science and engineering. We aim to bridge the gap between theoretical knowledge and practical application by organizing a variety of events, workshops, and collaborative projects.
+            The aim of the CSE Society is to create a dynamic and supportive
+            environment that nurtures the technical and creative abilities of
+            students in the field of computer science and engineering. We aim to
+            bridge the gap between theoretical knowledge and practical
+            application by organizing a variety of events, workshops, and
+            collaborative projects.
           </p>
         </div>
       </section>
 
       {/* Upcoming Events Section */}
-      <section className="events-section">
+      {/* <section className="events-section">
         <div className="events-left">
           <div className="section-title">
             <h2>UPCOMING EVENTS</h2>
@@ -115,14 +123,21 @@ const HomePage = () => {
         <div className="events-right">
           <h3>Udbhav-2024</h3>
           <p>
-          Join us as we celebrate the essence of creativity, innovation, and community at Udbhav 2024. Let’s make this event a spectacular success, and a memorable chapter in the history of our CSE Department!
+            Join us as we celebrate the essence of creativity, innovation, and
+            community at Udbhav 2024. Let’s make this event a spectacular
+            success, and a memorable chapter in the history of our CSE
+            Department!
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="footer">
-        <p>CSE Society: IIT ISM<br />Dhanbad</p>
+        <p>
+          CSE Society: IIT ISM
+          <br />
+          Dhanbad
+        </p>
       </footer>
     </div>
   );

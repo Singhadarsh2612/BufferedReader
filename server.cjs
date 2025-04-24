@@ -63,8 +63,6 @@ app.get("/download", async (req, res) => {
   }
 });
 
-
-
 // 📌 Caching Subfolders List
 app.get("/subfolders", async (req, res) => {
   const folderId = req.query.folderId;
@@ -117,7 +115,15 @@ app.get("/thumbnail", async (req, res) => {
   }
 });
 
-const PORT =  3001;
+// Serve static files from the dist directory
+app.use(express.static("dist"));
+
+// Serve index.html for the root path
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: "dist" });
+});
+
+const PORT = process.env.PORT || 5003;
 app.listen(PORT, () => {
-  console.log(`🚀 Proxy server running on http://localhost:${PORT}`);
+  console.log(`Proxy server running on http://localhost:${PORT}`);
 });

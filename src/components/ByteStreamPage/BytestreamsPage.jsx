@@ -1,17 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
-import './BytestreamsPage.css';
-
+import "./BytestreamsPage.css";
 
 import { useNavigate } from "react-router-dom";
-import Navbar from '../Navbar/Navbar.jsx';
-import LoadingCircle from '../LoadingCircle/LoadingCircle.jsx';
+import Navbar from "../Navbar/Navbar.jsx";
+import LoadingCircle from "../LoadingCircle/LoadingCircle.jsx";
 const BUFFERED_READERS_FOLDER_ID = "1nvs0pbcerRm-1pCcLOk-WJSPZ5pZnnU5"; // Replace with your actual Folder ID
-
 
 const BufferedReadersPage = () => {
   const [isSticky, setIsSticky] = useState(false);
-  const [activeFilter, setActiveFilter] = useState('ALL');
+  const [activeFilter, setActiveFilter] = useState("ALL");
   const [showDropdown, setShowDropdown] = useState(false);
   const [expandedCards, setExpandedCards] = useState({});
   const [pdfData, setPdfData] = useState({});
@@ -20,10 +18,10 @@ const BufferedReadersPage = () => {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   const [isLoadingMagazine, setIsLoadingMagazine] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 115);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -31,21 +29,21 @@ const BufferedReadersPage = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   // 📌 Fetch Subfolders (2015-16, 2016-17)
   async function getSubfolders() {
     try {
-      const url = `http://localhost:3001/subfolders?folderId=${BUFFERED_READERS_FOLDER_ID}`;
+      const url = `http://localhost:5003/subfolders?folderId=${BUFFERED_READERS_FOLDER_ID}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch subfolders");
-      
+
       const data = await response.json();
       return data.files.sort((a, b) => b.name.localeCompare(a.name)); // Reverse Order
     } catch (error) {
@@ -58,10 +56,11 @@ const BufferedReadersPage = () => {
   // 📌 Fetch PDFs from a Given Folder
   async function getPdfsFromFolder(folderId) {
     try {
-      const url = `http://localhost:3001/pdfs?folderId=${folderId}`;
+      const url = `http://localhost:5003/pdfs?folderId=${folderId}`;
       const response = await fetch(url);
-      if (!response.ok) throw new Error(`Failed to fetch PDFs for folder ${folderId}`);
-      
+      if (!response.ok)
+        throw new Error(`Failed to fetch PDFs for folder ${folderId}`);
+
       const data = await response.json();
       return data.files;
     } catch (error) {
@@ -75,7 +74,7 @@ const BufferedReadersPage = () => {
     async function fetchData() {
       setLoading(true);
       setError(null);
-  
+
       console.log("Fetching subfolders...");
 
       const subfolders = await getSubfolders();
@@ -98,14 +97,14 @@ const BufferedReadersPage = () => {
       setLoading(false);
     }
 
-    fetchData().catch(error => {
+    fetchData().catch((error) => {
       console.error("Error fetching data:", error);
       setError("Failed to load data.");
       setLoading(false);
     });
   }, []);
 
-  const filterOptions = ['ALL', ...Object.keys(pdfData)];
+  const filterOptions = ["ALL", ...Object.keys(pdfData)];
 
   const toggleCardExpansion = (year) => {
     setExpandedCards((prevState) => ({
@@ -117,13 +116,15 @@ const BufferedReadersPage = () => {
   return (
     <div className="buffered-readers-container">
       {/* Navbar */}
-      <Navbar/>
+      <Navbar />
 
       {/* Archive Header */}
       <div className="archive-header bytestreams-header">
         <div className="archive-header-content">
           <h1>BYTESTREAMS ARCHIVE</h1>
-          <p>Explore these newsletters to witness the rich history of our society</p>
+          <p>
+            Explore these newsletters to witness the rich history of our society
+          </p>
 
           {/* Dropdown filter
           <div className="filter-dropdown-container" ref={dropdownRef}>
@@ -161,10 +162,13 @@ const BufferedReadersPage = () => {
       {!loading && !error && (
         <div className="magazines-section">
           {Object.entries(pdfData)
-            .filter(([year]) => activeFilter === 'ALL' || activeFilter === year)
+            .filter(([year]) => activeFilter === "ALL" || activeFilter === year)
             .map(([year, pdfs], index) => (
               <div key={index} className="year-section">
-                <div className="year-title" onClick={() => toggleCardExpansion(year)}>
+                <div
+                  className="year-title"
+                  onClick={() => toggleCardExpansion(year)}
+                >
                   {year}
                 </div>
                 {expandedCards[year] && (
@@ -175,19 +179,23 @@ const BufferedReadersPage = () => {
                           <div className="magazine-text">
                             <h3>{pdf.name}</h3>
                             <button
-  className="read-btn"
-  onClick={() => {
-    setIsLoadingMagazine(true);
-    navigate("/pdf-viewer", {
-      state: { pdfUrl: pdf.id }, // Pass only the file ID
-    });
-  }}
->
-  READ
-</button>
+                              className="read-btn"
+                              onClick={() => {
+                                setIsLoadingMagazine(true);
+                                navigate("/pdf-viewer", {
+                                  state: { pdfUrl: pdf.id }, // Pass only the file ID
+                                });
+                              }}
+                            >
+                              READ
+                            </button>
                           </div>
                           <div className="magazine-image-container">
-                            <img src={`http://localhost:3001/thumbnail?fileId=${pdf.id}`} className="magazine-image" alt="Buffered Reader" />
+                            <img
+                              src={`http://localhost:5003/thumbnail?fileId=${pdf.id}`}
+                              className="magazine-image"
+                              alt="Buffered Reader"
+                            />
                           </div>
                         </div>
                       </div>
@@ -200,7 +208,10 @@ const BufferedReadersPage = () => {
       )}
       {isLoadingMagazine && <LoadingCircle message="" />}
       <footer className="footer">
-        <p>CSE Society: IIT ISM<br /> Dhanbad</p>
+        <p>
+          CSE Society: IIT ISM
+          <br /> Dhanbad
+        </p>
       </footer>
     </div>
   );
