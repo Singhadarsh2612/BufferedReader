@@ -222,10 +222,13 @@ body {
 .magazines-row1 {
   display: flex;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 30px;
   padding: 0 10px 5px;
   scrollbar-width: thin;
   scrollbar-color: #ccc #f5f5f5;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .magazines-row1::-webkit-scrollbar {
@@ -243,68 +246,67 @@ body {
 }
 
 .magazine-card1 {
-  min-width: 450px;
-  background-color: #FFF9F9; /* Lightest yellow for cards */
+  flex: 0 0 calc(50% - 15px);
+  min-width: calc(50% - 15px);
+  height: 300px;
+  scroll-snap-align: start;
+  background-color: #FFF9F9;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: all 0.3s ease;
-  margin-right: 10px;
-}
-
-.magazine-card1.expanded {
-  min-width: 650px;
 }
 
 .magazine-content1 {
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding-right: 30px;
+  height: 100%;
+  padding: 20px;
 }
 
 .magazine-text1 {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 10px;
 }
 
 .magazine-text1 h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-family: 'Italiana', serif;
   font-weight: 400;
-  margin-bottom: 5px;
-}
-
-.magazine-text1 p {
-  font-size: 16px;
-  font-family: 'Itim', cursive;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .read-btn1 {
-  background-color: #F3FB59; /* Bright yellow button */
+  background-color: #F3FB59;
   border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 400;
   border-radius: 8px;
+  padding: 8px 20px;
+  font-weight: 500;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10px;
+  width: fit-content;
+  color: black;
+  font-size: 16px;
 }
 
 .magazine-image-container {
-  width: 150px;
-  height: 200px;
-  overflow: visible;
-  margin-left: 20px;
-  position: relative;
+  flex: 1;
+  max-width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .magazine-image {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  max-height: 100%;
   object-fit: contain;
 }
+
 .pdf-thumbnail {
   width: 150px; /* Matches the Page width */
   height: calc(100% - 200px); /* Cuts 200px from the top */
@@ -363,57 +365,87 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
   .nav-group {
     flex-direction: column;
     margin-left: 0;
     margin-top: 10px;
   }
-
-  .nav-basic,
-  .nav-special {
+  
+  .nav-basic, .nav-special {
     margin-bottom: 10px;
   }
-
+  
   .nav-about {
     margin-right: 0;
   }
-
+  
   .archive-header {
     padding: 20px 15px;
   }
-
+  
   .archive-header h1 {
     font-size: 30px;
   }
-
-  .year-section {
+  
+  .year-section1 {
     max-width: 95%;
   }
-
-  .magazine-card {
+  
+  .magazine-card1 {
     min-width: 100%;
+    height: auto;
+    min-height: 250px;
   }
-
-  .magazine-content {
+  
+  .magazine-content1 {
+    flex-direction: row;
+    padding: 15px;
+    height: 100%;
+  }
+  
+  .magazine-text1 {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    padding-right: 0;
+    justify-content: center;
+    padding-right: 15px;
   }
-
+  
   .magazine-image-container {
-    width: 100%;
-    height: 200px;
+    flex: 1;
+    max-width: 45%;
+    height: 220px;
     margin-left: 0;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
+  
+  .magazine-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
   .expand-btn {
     right: 10px;
     top: auto;
     bottom: 10px;
   }
-
+  
   .magazine-description {
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine-text1 h3 {
+    font-size: 24px;
+  }
+  
+  .read-btn1 {
+    padding: 8px 15px;
+    font-size: 14px;
   }
 }

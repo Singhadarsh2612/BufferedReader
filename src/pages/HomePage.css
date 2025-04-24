@@ -193,6 +193,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  
+  padding: 1rem 0;
 }
 
 .monsoon-card {
@@ -203,6 +205,7 @@
   box-shadow: 2px 6px 8px 4px rgba(0, 0, 0, 0.25);
   width: 70%;
   max-width: 500px;
+  height: auto;
 }
 
 .monsoon-text {
@@ -241,6 +244,8 @@
 .monsoon-image {
   flex: 1;
   max-width: 45%;
+  height: auto; 
+  min-height: 220px;
 }
 
 .monsoon-image img {
@@ -392,14 +397,28 @@
     padding-left: 0;
     padding-right: 0;
   }
-  
+
   .monsoon-card {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+    max-width: 450px; 
+    margin: 0 auto; 
+  }
+  
+  .monsoon-text {
+    flex: 1.2;
   }
   
   .monsoon-image {
-    max-width: 100%;
+    flex: 1;
+    max-width: 45%; 
+    height: 180px;
+  }
+  
+  .monsoon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .journal-title-container {
@@ -415,3 +434,14 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .monsoon-image {
+    height: 200px;
+  }
+  
+  .monsoon-image img {
+    object-fit: contain; 
+  }
+}
+
